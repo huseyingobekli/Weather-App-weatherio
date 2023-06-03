@@ -52,8 +52,8 @@
 }
 
 main {
-  height: calc(100vh-80px);
-  height: calc(100svh-80px);
+  height: calc(100vh - 80px);
+  height: calc(100svh - 80px);
   overflow: hidden;
 }
 
