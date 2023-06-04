@@ -2,4 +2,5 @@
 @import url(layout/header.css);
 @import url(layout/current-weather.css);
 @import url(layout/5-day-forecast.css);
+@import url(layout/highlights.css);
 @import url(layout/hourly-forecast.css);
