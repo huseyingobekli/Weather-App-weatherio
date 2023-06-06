@@ -4,3 +4,6 @@
 @import url(layout/5-day-forecast.css);
 @import url(layout/highlights.css);
 @import url(layout/hourly-forecast.css);
+@import url(layout/footer.css);
+@import url(layout/loading.css);
+@import url(layout/error.css);
