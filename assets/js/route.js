@@ -24,14 +24,14 @@ const checkHash = function () {
   const [route, query] = requestUrl.includes
     ? requestUrl.split("?")
     : [requestUrl];
-  reoutes.get(route) ? routes.get(route)(query) : error404();
+  routes.get(route) ? routes.get(route)(query) : error404();
 };
 
 window.addEventListener("hashchange", checkHash);
 
 window.addEventListener("load", function () {
-  if (!this.window.location.hash) {
-    this.window.location.hash = "/current-location";
+  if (!window.location.hash) {
+    window.location.hash = "#/current-location";
   } else {
     checkHash();
   }

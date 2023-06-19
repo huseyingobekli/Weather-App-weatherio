@@ -16,31 +16,32 @@ const searchResult = document.querySelector("[data-search-result]");
 let searchTimeout = null;
 let searchTimeOutDuration = 500;
 
-searchFiled,
-  addEventListener("input", function () {
-    searchTimeout ?? this.clearTimeout(searchTimeout);
-    if (searchFiled.value) {
-      searchResult.classList.remove("active");
-      searchResult.innerHTML = "";
-      searchFiled.classList.remove("searching");
-    } else {
-      searchFiled.classList.add("searching");
-    }
+searchFiled.addEventListener("input", function () {
+  searchTimeout ?? clearTimeout(searchTimeout);
 
-    if (searchFiled.value) {
-      searchTimeout = this.setTimeout(() => {
-        fetchDATA(url.geo(searchFiled.value), function (locations) {
-          searchFiled.classList.remove("searching");
-          searchResult.classList.add("active");
-          searchResult.innerHTML = `
+  if (!searchFiled.value) {
+    searchResult.classList.remove("active");
+    searchResult.innerHTML = "";
+    searchFiled.classList.remove("searching");
+  } else {
+    searchFiled.classList.add("searching");
+  }
+
+  if (searchFiled.value) {
+    searchTimeout = setTimeout(() => {
+      fetchDATA(url.geo(searchFiled.value), function (locations) {
+        searchFiled.classList.remove("searching");
+        searchResult.classList.add("active");
+        searchResult.innerHTML = `
             <ul class="view-list" data-search-list>
+            
         </ul>
           `;
-          const items = [];
-          for (const { name, lat, lon, country, state } of locations) {
-            const searchItem = document.createElement("li");
-            searchItem.classList.add("view-item");
-            searchItem.innerHTML = `
+        const items = [];
+        for (const { name, lat, lon, country, state } of locations) {
+          const searchItem = document.createElement("li");
+          searchItem.classList.add("view-item");
+          searchItem.innerHTML = `
                 <span class="m-icon">location_on</span>
                     <div>
                         <p class="item-title">${name}</p>
@@ -51,15 +52,20 @@ searchFiled,
                 <a href="#/weather?lat=${lat}&lon=${lon}" class="item-link has-state" aria-label = "${name} weather" data-search-toggler></a>
             `;
 
-            searchResult
-              .querySelector("[data-search-list]")
-              .appendChild(searchItem);
-            items.push(searchItem.querySelector("[data-search-toggler]"));
-          }
+          searchResult
+            .querySelector("[data-search-list]")
+            .appendChild(searchItem);
+          items.push(searchItem.querySelector("[data-search-toggler]"));
+        }
+
+        addEventOnElemnts(items, "click", function () {
+          toggleSearch();
+          searchResult.classList.remove("active");
         });
-      }, searchTimeOutDuration);
-    }
-  });
+      });
+    }, searchTimeOutDuration);
+  }
+});
 
 const container = document.querySelector("[data-container]");
 const loading = document.querySelector("[data-loading]");
@@ -69,7 +75,7 @@ const currentLocationBtn = document.querySelector(
 const errorContent = document.querySelector("[data-error-content]");
 
 export const updateWeather = function (lat, lon) {
-  loading.style.display = "grid";
+  // loading.style.display = "grid";
   container.style.overflowY = "hidden";
 
   container.classList.contains("fade-in") ??
@@ -121,7 +127,6 @@ export const updateWeather = function (lat, lon) {
             class="weather-icon"
           />
         </div>
-
         <p class="body-3">${description}</p>
         <ul class="meta-list">
           <li class="meta-item">
@@ -147,3 +152,5 @@ export const updateWeather = function (lat, lon) {
     currentWeatherSection.appendChild(card);
   });
 };
+
+export const error404 = function () {};

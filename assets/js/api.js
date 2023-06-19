@@ -20,7 +20,7 @@ export const url = {
   reverseGeo(lat, lon) {
     return `http://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`;
   },
-  geo(quey) {
-    return `http://api.openweathermap.org/geo/1.0/direct?q=${quey}&limit=5`;
+  geo(query) {
+    return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`;
   },
 };
