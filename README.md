@@ -13,11 +13,10 @@
 </br></br>
 <h2> ✨ About The Project</h2>
 </br>
-- Designing and publishing a Weather site using <a href="https://openweathermap.org/api">OpenWeather</a>  API and site includes simple features like Current Weather, Todays Highlights, 5 Days Forecast and Determine Current Location. 
+- Designing and publishing a Weather site using <a href="https://openweathermap.org/api">OpenWeather</a>  API, site includes simple features like Current Weather, Todays Highlights, 5 Days Forecast and Determine Current Location. 
  <h2></h2>
 
-
-![openweather](https://github.com/huseyingobekli/Weather-App-weatherio/assets/117904152/981418db-2754-4378-875d-a645893d9f53)
+<a href="https://openweathermap.org/api"> <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" width="150px"></a>
 
 
 
