@@ -8,7 +8,8 @@
 
 </br>
 
-![weatherapp](https://github.com/huseyingobekli/Weather-App-weatherio/assets/117904152/acdb2b2f-ed8f-4152-a90c-413a34087dbc)
+
+![weatherapp](https://github.com/huseyingobekli/Weather-App-weatherio/assets/117904152/11721ce0-c008-4c04-a4b1-bb73989a0802)
  <h2 align="center"><a href="https://limon-weatherio.netlify.app/#/weather?lat=51.5073219&lon=-0.1276474">Demo Website</a>
 </br></br>
 <h2> ✨ About The Project</h2>
